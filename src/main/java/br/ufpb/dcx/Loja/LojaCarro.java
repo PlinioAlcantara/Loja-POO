@@ -37,10 +37,10 @@ public class LojaCarro implements Serializable {
     @Override
     public String toString() {
         return "Carro: " +
-                "modelo='" + modelo + '\'' +
+                "modelo = '" + modelo + '\'' +
                 ", ano=" + ano +
-                ", quilometragem=" + quilometragem +
-                ", placa=" + placa +
+                ", quilometragem = " + quilometragem +
+                ", placa = " + (long)placa +
                 '}';
     }
 

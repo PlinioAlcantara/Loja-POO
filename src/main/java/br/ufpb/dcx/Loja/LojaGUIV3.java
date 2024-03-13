@@ -54,13 +54,13 @@ public class LojaGUIV3 extends JFrame {
         getContentPane().add(linha1);
         getContentPane().add(linha2);
         getContentPane().add(botaoAdicionar);
-
-        getContentPane().add(botaoRemover);
-        getContentPane().add(botaoPesquisar);
         getContentPane().add(botaoAddCarro);
+        getContentPane().add(botaoPesquisar);
+        getContentPane().add(botaoPesquisarCarro);
+        getContentPane().add(botaoRemover);
         getContentPane().add(botaoRemoverCarro);
 
-        getContentPane().add(botaoPesquisarCarro);
+
     }
 
     //...
