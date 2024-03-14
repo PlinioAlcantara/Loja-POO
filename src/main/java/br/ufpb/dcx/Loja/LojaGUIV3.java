@@ -21,9 +21,9 @@ public class LojaGUIV3 extends JFrame {
         setLocation(10, 10);
         setResizable(true);
         getContentPane().setBackground(Color.white);
-        linha1 = new JLabel("Loja de carros usados", JLabel.CENTER);
+        linha1 = new JLabel("PL CARROS USADOS", JLabel.CENTER);
         linha1.setForeground(Color.black);
-        linha1.setFont(new Font("Robot", Font.BOLD, 40));
+        linha1.setFont(new Font("Nunito", Font.BOLD, 20));
         linha2 = new JLabel(carrosImg, JLabel.CENTER);
 
 

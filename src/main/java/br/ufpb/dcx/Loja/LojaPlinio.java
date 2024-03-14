@@ -106,7 +106,7 @@ public class LojaPlinio implements Loja {
     public Collection<Carro> pesquisarCarros(String placa, int ano) {
         Collection<Carro> carrosAchados = new ArrayList<>();
         for ( Carro c: this.lojaCarro.values()){
-            if (c.getPlaca()==placa && c.getAno()==ano){
+            if (c.getPlaca().equals(placa) && c.getAno()==ano){
                 carrosAchados.add(c);
             }
     }

@@ -35,17 +35,6 @@ public class GravadorDeDados {
         }
     }
 
-    public void salvarCarros(Map<String, Carro> carros) throws IOException{
-        ObjectOutputStream out = null;
-        try {
-            out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CARROS));
-            out.writeObject(carros);
-        } catch (Exception e){
-            e.printStackTrace();
-            throw new IOException("Erro ao salvar os carros no arquivo "+ARQUIVO_CARROS);
-        }
-    }
-
     public HashMap<String, Carro> recuperarCarros() throws IOException {
         ObjectInputStream in = null;
         try{
@@ -61,5 +50,18 @@ public class GravadorDeDados {
             }
         }
     }
+
+    public void salvarCarros(Map<String, Carro> carros) throws IOException{
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CARROS));
+            out.writeObject(carros);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw new IOException("Erro ao salvar os carros no arquivo "+ARQUIVO_CARROS);
+        }
+    }
+
+
 
 }
