@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class LojaPlinio implements Loja {
-    private Map<String, Contato> contatos;
-    private Map<String, LojaCarro> lojaCarro;
+    private Map<String, Cliente> contatos;
+    private Map<String, Carro> lojaCarro;
     private GravadorDeDados gravador = new GravadorDeDados();
 
     public LojaPlinio(){
@@ -51,7 +51,7 @@ public class LojaPlinio implements Loja {
     @Override
     public boolean cadastraContato(String nome, int cpf, int celular) {
         if (!contatos.containsKey(nome)){
-            this.contatos.put(nome, new Contato(nome,cpf, celular));
+            this.contatos.put(nome, new Cliente(nome,cpf, celular));
             salvarDados();
             return true;
         } else {
@@ -60,9 +60,9 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public Collection<Contato> pesquisarClientes(int cpf, int celular) {
-        Collection<Contato> contatosAchados = new ArrayList<>();
-        for (Contato c: this.contatos.values()){
+    public Collection<Cliente> pesquisarClientes(int cpf, int celular) {
+        Collection<Cliente> contatosAchados = new ArrayList<>();
+        for (Cliente c: this.contatos.values()){
             if (c.getCpf()==cpf && c.getCelular()==celular){
                 contatosAchados.add(c);
             }
@@ -81,11 +81,9 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public boolean adicionarCarro(String modelo, int ano, double quilometragem, double placa) {
-        String chavePlaca = Double.toString(placa);
-
-        if (!lojaCarro.containsKey(chavePlaca)) {
-            this.lojaCarro.put(chavePlaca, new LojaCarro(modelo, ano, quilometragem, placa));
+    public boolean adicionarCarro(String modelo, int ano, double quilometragem, String placa) {
+        if (!lojaCarro.containsKey(placa)) {
+            this.lojaCarro.put(placa, new Carro(modelo, ano, quilometragem, placa));
             salvarCarros();
             return true;
         } else {
@@ -94,10 +92,10 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public boolean removerCarro(double placa) {
-        String chavePlaca = Double.toString(placa);
-        if(this.lojaCarro.containsKey(chavePlaca)) {
-            this.lojaCarro.remove(chavePlaca);
+    public boolean removerCarro(String placa) {
+
+        if(this.lojaCarro.containsKey(placa)) {
+            this.lojaCarro.remove(placa);
             return true;
         }else{
             return false;
@@ -105,9 +103,9 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public Collection<LojaCarro> pesquisarCarros(double placa, int ano) {
-        Collection<LojaCarro> carrosAchados = new ArrayList<>();
-        for ( LojaCarro c: this.lojaCarro.values()){
+    public Collection<Carro> pesquisarCarros(String placa, int ano) {
+        Collection<Carro> carrosAchados = new ArrayList<>();
+        for ( Carro c: this.lojaCarro.values()){
             if (c.getPlaca()==placa && c.getAno()==ano){
                 carrosAchados.add(c);
             }

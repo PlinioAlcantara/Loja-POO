@@ -27,8 +27,8 @@ public class CarroAddController implements ActionListener {
                 "Qual o ano do carro? "));
         double quilometragem = Double.parseDouble(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual a quilometragem do carro?" ));
-        double placa = Double.parseDouble(JOptionPane.showInputDialog(janelaPrincipal,
-                "informe a placa do carro?" ));
+        String placa = JOptionPane.showInputDialog(janelaPrincipal,
+                "informe a placa do carro?" );
 
         boolean cadastrou = loja.adicionarCarro( modelo, ano, quilometragem, placa);
         if (cadastrou){

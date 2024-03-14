@@ -16,15 +16,15 @@ public class CarroSearchController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int placa = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
-                "Qual a placa  do Carro? "));
+        String placa = JOptionPane.showInputDialog(janelaPrincipal,
+                "Qual a placa  do Carro? ");
         int ano = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o ano do Carro? " ));
-        Collection<LojaCarro> carros = loja.pesquisarCarros(placa, ano);
+        Collection<Carro> carros = loja.pesquisarCarros(placa, ano);
         if (carros.size()>0){
             JOptionPane.showMessageDialog(janelaPrincipal,
                     "Carro encontrado com sucesso:");
-            for (LojaCarro c: carros) {
+            for (Carro c: carros) {
                 JOptionPane.showMessageDialog(janelaPrincipal, c.toString());
             }
         } else {

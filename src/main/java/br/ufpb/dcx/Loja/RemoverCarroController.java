@@ -16,7 +16,7 @@ public class RemoverCarroController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String placa = JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual a placa do carro?");
-        boolean removeu = loja.removerCarro(Double.parseDouble(placa));
+        boolean removeu = loja.removerCarro(placa);
         if (removeu){
             JOptionPane.showMessageDialog(janelaPrincipal,
                     "Carro removido com sucesso");

@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-class AgendaPlinioTest {
+class LojaPlinioTest {
     @Test
     public void testaCadastro(){
         LojaPlinio agenda = new LojaPlinio();
         assertTrue(agenda.pesquisarClientes(3,3).size()==0);
         agenda.cadastraContato("Juliana",3,3);
         assertEquals(1, agenda.pesquisarClientes(3,3).size());
-        assertTrue(agenda.pesquisarClientes(3,3).contains(new Contato("Juliana",3,3)));
+        assertTrue(agenda.pesquisarClientes(3,3).contains(new Cliente("Juliana",3,3)));
     }
 
     @Test

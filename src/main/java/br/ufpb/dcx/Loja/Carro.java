@@ -3,16 +3,16 @@ package br.ufpb.dcx.Loja;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class LojaCarro implements Serializable {
+public class Carro implements Serializable {
 
     private String modelo;
     private int ano;
     private double quilometragem;
-    private double placa;
+    private String placa;
 
 
 
-    public LojaCarro(String modelo, int ano, double quilometragem, double placa) {
+    public Carro(String modelo, int ano, double quilometragem, String placa) {
         this.modelo = modelo;
         this.ano = ano;
         this.quilometragem = quilometragem;
@@ -20,13 +20,12 @@ public class LojaCarro implements Serializable {
 
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        LojaCarro lojaCarro = (LojaCarro) o;
-        return Double.compare(placa, lojaCarro.placa) == 0;
+        Carro carro = (Carro) o;
+        return Objects.equals(placa, carro.placa);
     }
 
     @Override
@@ -40,7 +39,7 @@ public class LojaCarro implements Serializable {
                 "modelo = '" + modelo + '\'' +
                 ", ano=" + ano +
                 ", quilometragem = " + quilometragem +
-                ", placa = " + (long)placa +
+                ", placa = " + placa +
                 '}';
     }
 
@@ -68,11 +67,11 @@ public class LojaCarro implements Serializable {
         this.quilometragem = quilometragem;
     }
 
-    public double getPlaca() {
+    public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(double placa) {
+    public void setPlaca(String placa) {
         this.placa = placa;
     }
 }

@@ -11,9 +11,7 @@ public class LojaGUI extends JFrame {
         setTitle("Loja de carros usados");
         setSize(400,200);
         setLocation(150, 150);
-        //localização da janela na tela
         setResizable(true);
-        //janela não redimensionável
         getContentPane().setBackground(Color.lightGray);
     }
     //...

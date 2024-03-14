@@ -17,15 +17,15 @@ public class LojaGUIV3 extends JFrame {
 
     public LojaGUIV3() {
         setTitle("Carros usados");
-        setSize(900, 800); //tamanho da janela
+        setSize(900, 800);
         setLocation(10, 10);
         setResizable(true);
         getContentPane().setBackground(Color.white);
         linha1 = new JLabel("Loja de carros usados", JLabel.CENTER);
         linha1.setForeground(Color.black);
-        linha1.setFont(new Font("serif", Font.CENTER_BASELINE, 24));
+        linha1.setFont(new Font("Robot", Font.BOLD, 40));
         linha2 = new JLabel(carrosImg, JLabel.CENTER);
-        linha3 = new JLabel(); // Inicialização de linha3
+
 
         botaoAdicionar = new JButton("Adicionar Clientes", addImg);
         botaoAdicionar.addActionListener(new LojaAddController(loja, this));
@@ -50,7 +50,7 @@ public class LojaGUIV3 extends JFrame {
         botaoRemoverCarro = new JButton("Remover carro", removerCarroImgRedimensionada);
         botaoRemoverCarro.addActionListener(new RemoverCarroController(loja, this));
 
-        getContentPane().setLayout(new GridLayout(4, 2)); // Ajuste para 5 linhas
+        getContentPane().setLayout(new GridLayout(4, 2));
         getContentPane().add(linha1);
         getContentPane().add(linha2);
         getContentPane().add(botaoAdicionar);

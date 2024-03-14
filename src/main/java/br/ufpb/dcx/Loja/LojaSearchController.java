@@ -20,11 +20,11 @@ public class LojaSearchController implements ActionListener {
                 "Qual o CPF do Cliente?"));
         int celular = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o celular do Cliente?" ));
-        Collection<Contato> clientes = loja.pesquisarClientes(cpf, celular);
+        Collection<Cliente> clientes = loja.pesquisarClientes(cpf, celular);
         if (clientes.size()>0){
             JOptionPane.showMessageDialog(janelaPrincipal,
                     "Cliente encontrado com sucesso:");
-            for (Contato c: clientes) {
+            for (Cliente c: clientes) {
                 JOptionPane.showMessageDialog(janelaPrincipal, c.toString());
             }
         } else {

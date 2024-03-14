@@ -3,13 +3,13 @@ package br.ufpb.dcx.Loja;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Contato implements Serializable {
+public class Cliente implements Serializable {
 
     private String nome;
     private int cpf;
     private int celular;
 
-    public Contato(String nome, int cpf, int celular){
+    public Cliente(String nome, int cpf, int celular){
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
@@ -20,7 +20,7 @@ public class Contato implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Contato contato = (Contato) o;
+        Cliente contato = (Cliente) o;
         return Double.compare(cpf, contato.cpf) == 0 && celular == contato.celular && Objects.equals(nome, contato.nome);
     }
 

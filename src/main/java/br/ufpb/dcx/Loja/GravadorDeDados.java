@@ -8,11 +8,11 @@ public class GravadorDeDados {
     public static final String ARQUIVO_CONTATOS = "contatos.dat";
     public static final String ARQUIVO_CARROS = "carros.dat";
 
-    public HashMap<String, Contato> recuperarContatos() throws IOException {
+    public HashMap<String, Cliente> recuperarContatos() throws IOException {
         ObjectInputStream in = null;
         try{
             in = new ObjectInputStream(new FileInputStream(ARQUIVO_CONTATOS));
-            return (HashMap<String, Contato>) in.readObject();
+            return (HashMap<String, Cliente>) in.readObject();
         } catch (Exception e){
             System.out.println("Não foi possível recuperar os contatos");
             throw new IOException("Não foi possível recuperar os dados do arquivo "+ARQUIVO_CONTATOS);
@@ -24,18 +24,18 @@ public class GravadorDeDados {
         }
     }
 
-    public void salvarContatos(Map<String, Contato> contatos) throws IOException{
+    public void salvarContatos(Map<String, Cliente> cliente) throws IOException{
         ObjectOutputStream out = null;
         try {
             out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CONTATOS));
-            out.writeObject(contatos);
+            out.writeObject(cliente);
         } catch (Exception e){
             e.printStackTrace();
             throw new IOException("Erro ao salvar os contatos no arquivo "+ARQUIVO_CONTATOS);
         }
     }
 
-    public void salvarCarros(Map<String, LojaCarro> carros) throws IOException{
+    public void salvarCarros(Map<String, Carro> carros) throws IOException{
         ObjectOutputStream out = null;
         try {
             out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CARROS));
@@ -46,11 +46,11 @@ public class GravadorDeDados {
         }
     }
 
-    public HashMap<String, LojaCarro> recuperarCarros() throws IOException {
+    public HashMap<String, Carro> recuperarCarros() throws IOException {
         ObjectInputStream in = null;
         try{
             in = new ObjectInputStream(new FileInputStream(ARQUIVO_CARROS));
-            return (HashMap<String, LojaCarro>) in.readObject();
+            return (HashMap<String, Carro>) in.readObject();
         } catch (Exception e){
             System.out.println("Não foi possível recuperar os carros");
             throw new IOException("Não foi possível recuperar os dados do arquivo "+ARQUIVO_CARROS);
