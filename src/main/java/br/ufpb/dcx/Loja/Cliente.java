@@ -44,6 +44,6 @@ public class Cliente implements Serializable {
     public void setCelular(long celular){this.celular = celular;}
 
     public String toString(){
-        return this.nome+":"+this.cpf+"/"+this.celular;
+        return  "Cliente: "+ this.nome+"\nCPF: "+this.cpf+"\nCelular: "+this.celular;
     }
 }
