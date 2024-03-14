@@ -49,7 +49,7 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public boolean cadastraContato(String nome, int cpf, int celular) {
+    public boolean cadastraContato(String nome, long cpf, long celular) {
         if (!contatos.containsKey(nome)){
             this.contatos.put(nome, new Cliente(nome,cpf, celular));
             salvarDados();
@@ -60,7 +60,7 @@ public class LojaPlinio implements Loja {
     }
 
     @Override
-    public Collection<Cliente> pesquisarClientes(int cpf, int celular) {
+    public Collection<Cliente> pesquisarClientes(long cpf, long celular) {
         Collection<Cliente> contatosAchados = new ArrayList<>();
         for (Cliente c: this.contatos.values()){
             if (c.getCpf()==cpf && c.getCelular()==celular){

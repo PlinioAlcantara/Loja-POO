@@ -6,10 +6,10 @@ import java.util.Objects;
 public class Cliente implements Serializable {
 
     private String nome;
-    private int cpf;
-    private int celular;
+    private long cpf;
+    private long celular;
 
-    public Cliente(String nome, int cpf, int celular){
+    public Cliente(String nome, long cpf, long celular){
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
@@ -29,19 +29,19 @@ public class Cliente implements Serializable {
         return Objects.hash(nome, cpf, celular);
     }
 
-    public int getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular){this.celular = celular;}
+    public void setCelular(long celular){this.celular = celular;}
 
     public String toString(){
         return this.nome+":"+this.cpf+"/"+this.celular;

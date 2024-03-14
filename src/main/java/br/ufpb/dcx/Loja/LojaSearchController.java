@@ -16,9 +16,9 @@ public class LojaSearchController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int cpf = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
+        long cpf = Long.parseLong(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o CPF do Cliente?"));
-        int celular = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
+        long celular = Long.parseLong(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o celular do Cliente?" ));
         Collection<Cliente> clientes = loja.pesquisarClientes(cpf, celular);
         if (clientes.size()>0){

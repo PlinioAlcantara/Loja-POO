@@ -17,9 +17,9 @@ public class LojaAddController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String nome = JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o nome do Cliente?");
-        int cpf = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
+        long cpf = Long.parseLong(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o CPF do Cliente? "));
-        int celular = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal,
+        long celular = Long.parseLong(JOptionPane.showInputDialog(janelaPrincipal,
                 "Qual o Celular do Cliente?" ));
 
         boolean cadastrou = loja.cadastraContato(nome, cpf, celular);
