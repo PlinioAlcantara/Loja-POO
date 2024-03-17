@@ -8,6 +8,7 @@ public class LojaGUIV3_Com_Runnable {
             public void run() {
                 JFrame janela = new LojaGUIV3();
                 janela.setVisible(true);
+                janela.setLocationRelativeTo( null);
                 janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         });
