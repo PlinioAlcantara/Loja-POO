@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LojaGUIV3 extends JFrame {
-    JLabel linha1, linha2, linha3;
+    JLabel linha1, linha2;
     ImageIcon carrosImg = new ImageIcon("./imgs/carros.png");
     ImageIcon addImg = new ImageIcon("./imgs/icons/add_person.png");
     ImageIcon pesqImg = new ImageIcon("./imgs/icons/search_person.png");
@@ -18,12 +18,11 @@ public class LojaGUIV3 extends JFrame {
     public LojaGUIV3() {
         setTitle("Carros usados");
         setSize(900, 800);
-        setLocation(10, 10);
         setResizable(true);
-        getContentPane().setBackground(Color.white);
+        getContentPane().setBackground(Color.WHITE);
         linha1 = new JLabel("PL CARROS USADOS", JLabel.CENTER);
         linha1.setForeground(Color.black);
-        linha1.setFont(new Font("Nunito", Font.BOLD, 20));
+        linha1.setFont(new Font("Robot", Font.BOLD, 20));
         linha2 = new JLabel(carrosImg, JLabel.CENTER);
 
 
@@ -67,6 +66,7 @@ public class LojaGUIV3 extends JFrame {
     public static void main(String[] args) {
         JFrame janela = new LojaGUIV3();
         janela.setVisible(true);
+        janela.setLocationRelativeTo( null);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

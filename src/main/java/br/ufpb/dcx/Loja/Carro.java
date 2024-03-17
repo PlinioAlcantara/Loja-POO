@@ -35,12 +35,7 @@ public class Carro implements Serializable {
 
     @Override
     public String toString() {
-        return "Carro: " +
-                "modelo = '" + modelo + '\'' +
-                ", ano=" + ano +
-                ", quilometragem = " + quilometragem +
-                ", placa = " + placa +
-                '}';
+        return "Caro: " + this.modelo + "\nAno: "  + this.ano + " \nQuilometragem: " + this.quilometragem + " \nPlaca = " + this.placa;
     }
 
     public String getModelo() {
