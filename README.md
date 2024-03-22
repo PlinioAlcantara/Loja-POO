@@ -1,3 +1,4 @@
-# Projeto Agenda POO 2023.1
+# Projeto Loja de carros usandos
 
-Projeto com códigos discutidos na aula de POO da UFPB - Campus IV
+Projeto com códigos java responsáveis por fazer cadastro, remoção e pesquisa de clientes e carros de uma loja de carros usados
+
