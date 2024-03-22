@@ -29,6 +29,14 @@ public class Cliente implements Serializable {
         return Objects.hash(nome, cpf, celular);
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public long getCpf() {
         return cpf;
     }
